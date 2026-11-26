@@ -105,6 +105,9 @@ export function dashboard(state) {
 
   <section class="card">
     <h2>Latest spending</h2>
+    ${recent.length === 0
+      ? `<p class="empty">No spending recorded in ${monthLabel(state.month)} yet — add a transaction to get started.</p>`
+      : `
     <table>
       <thead><tr><th>Date</th><th>What</th><th class="num">Amount</th></tr></thead>
       <tbody>
@@ -113,7 +116,7 @@ export function dashboard(state) {
         <td>${esc(t.payee)}<br><span class="txn-note">${esc(t.note || '')}</span></td>
         <td class="num ${t.amount > 0 ? 'amount-in' : 'amount-out'}">${t.amount > 0 ? '+' : '&minus;'}${money(Math.abs(t.amount)).replace('$', '$')}</td></tr>`).join('')}
       </tbody>
-    </table>
+    </table>`}
     <p><a href="#/transactions">All transactions &rarr;</a></p>
   </section>
 </div>`;
