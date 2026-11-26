@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HearthLedger — Household Budget</title>
+<meta name="description" content="HearthLedger keeps one household's money in one place: income, spending, bills, budgets and savings goals for the Alden household.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="#/">
+      <span class="brand-mark" aria-hidden="true">&#8962;</span>
+      <span class="brand-text"><strong>HearthLedger</strong><small>One household, one ledger</small></span>
+    </a>
+    <nav class="main-nav" aria-label="Main">
+      <a href="#/" data-nav="dashboard">Dashboard</a>
+      <a href="#/transactions" data-nav="transactions">Transactions</a>
+      <a href="#/budgets" data-nav="budgets">Budgets</a>
+      <a href="#/bills" data-nav="bills">Bills</a>
+      <a href="#/goals" data-nav="goals">Goals</a>
+      <a href="#/reports" data-nav="reports">Reports</a>
+    </nav>
+    <p class="household-chip" id="household-chip">The Alden household</p>
+  </div>
+</header>
+
+<main class="wrap" id="view" aria-live="polite"></main>
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <p><strong>HearthLedger</strong> — a household budget site. Figures are the Alden household's
+    November 2026 budget and are stored only in this browser, in localStorage.</p>
+    <p><button class="link-button" id="reset-demo" type="button">Reset demo data</button>
+    &middot; <a href="#/reports">Monthly report</a> &middot; <a href="#/goals">Savings goals</a></p>
+  </div>
+</footer>
+
+<script type="module" src="app.js"></script>
+</body>
+</html>
